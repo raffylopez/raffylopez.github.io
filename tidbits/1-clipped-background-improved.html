@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>0-Viewport-Image-Initial</title>
+    <style type="text/css" media="screen">
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap');
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: scale(1.0) translate(0px, 0px);
+            }
+
+            50% {
+                transform: scale(1.1) translate(-5px, -20px);
+            }
+
+            100% {
+                transform: scale(1.2) translate(-20px, 5px);
+            }
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: "Playfair Display";
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        br {
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .hero-clipper .title-container {
+            position: absolute;
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            align-items:
+                center;
+            justify-content: center;
+        }
+
+        .hero-clipper .title-container h2 {
+            z-index: 98;
+            color: white;
+            font-family: "Gothic A1";
+            font-size:
+                calc(1vw + 1vh);
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            text-align: center;
+        }
+
+        .hero-clipper .title-container h1 {
+            z-index: 98;
+            display: inline;
+            margin: 0 auto;
+            color: white;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: calc(4vw + 4vh);
+            text-align: center;
+        }
+
+        .container h1 {
+            margin: 1em 1em 1em 1em;
+            text-align: center;
+            color:
+                #444;
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin: 1rem;
+            text-align: center;
+            color: #444;
+            font-family: "Playfair Display";
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        nav {}
+
+        .container {}
+
+        .container>h1 {}
+
+        .container>p {}
+
+        footer {}
+
+        .hero-clipper {
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            /*
+         border: 4px solid black; */
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .hero {
+            /* border: 1px solid blue; */
+            background-image:
+                url(./img/switzerland0.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            transition:
+                transform 2s;
+            z-index: 1;
+
+            /* background-size: 100% 100%; */
+            /* only scale beyond these values
+            */
+            /* min-height: 799px; */
+            /* min-width: 640px; */
+
+            /* start scaling proportionally beyond original size */
+            /* height:
+            calc(100vw * 799/640); */
+            /* height: 100vh; */
+            /* width: calc(100vh
+            * 640/799); */
+            /* width: 640px; */
+            animation: bounce 20s linear infinite;
+            animation-direction: alternate;
+        }
+
+        .hero:hover {
+            transform: scale(1.1);
+        }
+
+        nav {}
+
+        .header-wrapper ul {
+            display: flex;
+            font-family: "Didact
+Gothic"; font-size: 1.4rem; list-style:none; color: #222; top: 0px;
+left: 0px;
+            z-index: 80;
+        }
+
+        .header-wrapper li {
+            margin-right: 1rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav>
+    </nav>
+    <div class="hero-clipper">
+
+        <div class='title-container'>
+            <h2>At Beautful Switzerland</h2>
+            <h1>Let
+                Your Adventures Begin...</h1>
+        </div>
+        <section class="hero"></section>
+    </div>
+    <section class="container">
+        <h1>Behold
+            the Matterhorn</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod trempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+            justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+            sanctus est Lorem ipsum dolor sit amet.</p>
+        <p></p>
+        <p>Lorem ipsum dolor
+            sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod trempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p></p>
+    </section class="container">
+
+    <section class="container">
+        <h1>Jungfraujoch: The Top of Europe</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod trempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+        <p></p>
+    </section class="container">
+    <footer></footer>
+
+</body>
+
+</html>

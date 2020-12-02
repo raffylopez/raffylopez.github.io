@@ -1,0 +1,235 @@
+/*
+ * header-menu.css
+ * Copyright (C) 2020 volare
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.first_letter {
+   color: #333;
+   font-size: 4.5rem;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-weight: 900;
+   float: left;
+   display: block;
+   padding: 0rem 0.5rem 0rem 0rem;
+   margin: -3rem 0rem -3rem 0rem;
+}
+
+img {
+   height: 50vh;
+   width: auto;
+   float: right;
+   padding: 1rem;
+   text-align: center;
+   margin: 0 auto;
+}
+
+* {
+   margin: 0px;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 18px;
+   /* font-size: 2vw; */
+}
+
+body {
+   font-family: "Montserrat";
+   line-height: 2;
+}
+
+li {
+   margin-bottom: 0.5rem;
+   line-height: 1;
+}
+
+h1 {
+   color: #333;
+   padding-bottom: 3rem;
+   padding-top: 5rem;
+   font-size: 2.5rem;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   line-height: 1;
+   text-align: center;
+}
+
+nav {}
+
+
+nav .header-strip {
+   top: 0px;
+   position: fixed;
+   height: 2rem;
+   width: 100vw;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   /* background-color: #333; */
+   background-color: rebeccapurple;
+   z-index: 0;
+}
+
+nav .header-strip span.logo {
+   background-image: url(./img/menu-icon.svg);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   color: white;
+   height: 1rem;
+   width: 1.2rem;
+   /* height: auto; */
+   padding: 0.2rem;
+   margin: 1rem;
+   cursor: pointer;
+   -webkit-user-select: none;
+   /* Safari */
+   -moz-user-select: none;
+   /* Firefox */
+   -ms-user-select: none;
+   /* IE10+/Edge */
+   user-select: none;
+   /* Standard */
+}
+
+/* .foo:after { */
+/*    background-color: black; */
+/*    display: block; */
+/*    height: 2px; */
+/*    left: 50%; */
+/*    content: ""; */
+/*    position: relative; */
+/*    width: 0.5rem; */
+/*    bottom: 0; */
+/*    transition: width 0.3s ease 0s, left 0.3s ease 0s; */
+/* } */
+/*  */
+/* .foo:hover:after { */
+/*    left: 0; */
+/*    width: 100%; */
+/* } */
+/*  */
+nav .header-strip span.not-logo {
+   flex: 20;
+}
+
+.container {
+   margin: 2rem 2rem 2rem 2rem;
+   z-index: -1;
+}
+
+.container>h1 {
+}
+
+.container>p {}
+
+footer {}
+
+nav {}
+
+.navmenu-container {
+   visibility: hidden;
+   transform-origin: 0% 0%;
+   font-family: "Montserrat";
+   position: fixed;
+   background-color: #F6F6FA;
+   width: 100vw;
+   font-size: .55rem;
+   font-weight: 400;
+   color: #333;
+   box-shadow: 0px 4px 7px #EEE;
+   padding-bottom: 2rem;
+   transition: all 200ms;
+   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+   transform: scaleY(0);
+   transform-origin: 0 0;
+   opacity: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content:flex-start;
+
+   z-index: 99;
+}
+
+
+@media screen and (min-width: 576px) {
+   .navmenu-container {
+      flex-direction: row;
+   justify-content:space-between;
+   }
+}
+
+.visiblenav {
+   visibility: visible;
+   opacity: 1;
+   transform: scaleY(1);
+   padding-bottom: 0rem;
+   overflow-x: hidden;
+   overflow-y: scroll;
+   /* height: calc(100% - 1px);  */
+   max-height: calc(100% - 2rem); 
+   /* max-height: 100%;  */
+   /* height: calc(100% - 100px);  */
+   /* min-height: 100%; */
+   /* max-height: calc(200% - 200px);  */
+   /* max-height: 100%; */
+   
+   /* min-height: auto; */
+   /* max-height: 100%; */
+
+   /* min-height: 100vh; */
+   /* height: auto; */
+}
+
+.fontsizemobile {
+   font-size: 1rem;
+   padding-left: 0em;
+   padding-top: 1em;
+   /* margin-bottom: 4em; */
+   /* flex-shrink: 0; */
+}
+
+.fontsizescreen {
+   font-size: 0.8rem;
+   padding-top: 2em;
+   padding-bottom: 2em;
+}
+
+.navmenu-container ul {
+   padding: 0px;
+   margin-right: 0.5rem;
+   flex-shrink: 0;
+   margin-bottom: 0.5rem;
+}
+
+.navmenu-container ul li {
+   padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+.navmenu-container>ul>li {
+   padding: 0rem 0rem 0.4rem 1rem;
+   text-transform: uppercase;
+   font-weight: 1000;
+   color: #333;
+}
+
+.navmenu-container>ul>ul>li {
+   /* color: blue; */
+}
+
+.navmenu-container ul li {
+   list-style-type: none;
+   margin-left: 0.3rem;
+}
+
+a,
+a:visited {
+   text-decoration: none;
+   color: #333;
+}
+
+a:hover {
+   color: orange;
+}

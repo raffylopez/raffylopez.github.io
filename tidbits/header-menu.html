@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Header-Menu</title>
+    <link rel="stylesheet" href="header-menu.css" type="text/css" media="all">
+    <script charset="utf-8">
+        function dismissNavMenu() {
+            var obj = document.querySelector(".navmenu-container");
+            obj.classList.remove("visiblenav");
+        }
+
+        function displayNavMenu() {
+            var obj =
+                document.querySelector(".navmenu-container");
+            obj.classList.toggle("visiblenav")
+            if (window.innerWidth >=
+                576) {
+                obj.classList.remove("fontsizemobile")
+                obj.classList.add("fontsizescreen")
+            } else {
+                obj.classList.remove("fontsizescreen")
+                obj.classList.add("fontsizemobile")
+            }
+        }
+
+        function
+        resizeCallback() {
+            var obj =
+                document.querySelector(".navmenu-container");
+            console.log(window.innerWidth)
+            if (window.innerWidth >= 576) {
+                obj.classList.remove("fontsizemobile")
+                obj.classList.add("fontsizescreen")
+            } else {
+                obj.classList.remove("fontsizescreen")
+                obj.classList.add("fontsizemobile")
+            }
+        }
+
+        window.onresize = resizeCallback;
+    </script>
+
+    <style type="text/css" media="screen">
+        .mininav {
+            background-color: #EEE;
+            margin-top: 2rem;
+            color: #323232;
+            font-size: 1re1rem;
+            z-index: -1;
+            width: 100vw;
+            height: 4rem;
+        }
+
+        .mininav ul {
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4rem;
+            padding: 0px;
+            padding-top: 0.4rem;
+            list-style: none;
+        }
+
+        .mininav ul li {
+            margin-right: 3rem;
+            text-transform: uppercase;
+        }
+
+        .mininav ul li a:hover {
+            outline-style: none;
+            text-decoration: none;
+            color: #323232;
+        }
+
+        .mininav ul li a:after {
+            background-color: #878;
+            position: relative;
+            display: block;
+            content: "";
+            width: 0;
+            left: 50%;
+            height: 2px;
+            bottom: -0.2em;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .mininav ul li a:hover:after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="header-strip"> <span class="logo" onclick="displayNavMenu()"></span> <span class="not-logo" onclick="dismissNavMenu()">&nbsp;</span> </div>
+        <div class="navmenu-container">
+            <ul>
+                <li>Trade</li>
+                <ul>
+                    <li><a href="#">Stocks</a></li>
+                    <li><a href="#">Forex New</a></li>
+                    <li><a href="#">Forex</a></li>
+                    <li><a href="#">Options</a></li>
+                    <li><a href="#">Cryptocurrencies</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li>For Traders</li>
+                <ul>
+                    <li><a href="#">News Feed</a></li>
+                    <li><a href="#">Assets</a></li>
+                    <li><a href="#">Stock
+                            Collections</a></li>
+                    <li><a href="#">Industries</a></li>
+                    <li><a href="#">Tournaments</a></li>
+                    <li><a href="#">Historical
+                            Quotes</a></li>
+                    <li><a href="#">Calendars</a></li>
+                    <li><a href="#">Video Tutorials</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Download App</a></li>
+                    <li><a href="#">Trading Specifications</a></li>
+                    <li><a href="#">The Basics of Margin Trading</a></li>
+                    <li><a href="#">Deposits and Withdrawals</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li>About Us</li>
+                <ul>
+                    <li><a href="#">IQ Option in
+                            Numbers</a></li>
+                    <li><a href="#">IQ Option in the
+                            Press</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Charitable
+                            Foundation</a></li>
+                </ul>
+            </ul>
+        </div>
+    </nav>
+    <div class="mininav">
+        <ul>
+            <li><a href="#">More Destinations</a></li>
+            <li><a href="#">Travel Bundles</a></li>
+            <li><a href="#">Book
+                    Now</a></li>
+        </ul>
+    </div>
+
+    <section class="container" onclick="dismissNavMenu()">
+        <h1>A Home Away
+            from Home</h1>
+
+        <p><span class="first_letter">L</span>orem ipsum dolor sit amet,
+            consetetur sadipscing elitr, sed diam nonumy eirmod trempor invidunt ut
+            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+            sea takimata sanctus est Lorem ipsum dolor sit amet.</p> <img src="./img/mountain-bike.jpg" />
+        <p>Lorem ipsum dolor sit amet, consetetur
+            sadipscing elitr, sed diam nonumy eirmod trempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+            justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+            sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit
+            amet, consetetur sadipscing elitr, sed diam nonumy eirmod trempor
+            invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+            vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod trempor invidunt ut labore et dolore magna aliquyam erat,
+            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+            rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+            dolor sit amet.</p>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing
+            elitr, sed diam nonumy eirmod trempor invidunt ut labore et dolore magna
+            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+            est Lorem ipsum dolor sit amet.</p>
+    </section class="container">
+    <footer></footer>
+
+</body>
+
+</html>

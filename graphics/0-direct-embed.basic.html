@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style type="text/css" media="screen">
+      .star-wrapper {
+         height: 400px;
+         width: 400px;
+         outline: 1px solid red;
+      }
+
+      svg {
+         outline: 1px solid black;
+      }
+   </style>
+</head>
+
+<body>
+
+   <div class="star-wrapper">
+      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 200 200" height="100%" width="100%" preserveAspectRatio="none">
+         <defs>
+            <style>
+               .cls-1 {
+                  fill: yellow;
+                  stroke: black;
+                  stroke-miterlimit: 10;
+                  animation: rotating-star 5s linear infinite;
+                  transform-box: fill-box;
+                  transform-origin: center;
+               }
+
+               @keyframes rotating-star {
+                  from {
+                     transform: rotate(0deg)
+                  }
+
+                  to {
+                     transform: rotate(360deg)
+                  }
+               }
+            </style>
+         </defs>
+
+         <g transform="translate(16,16)">
+            <polygon class="cls-1" points="126.86 101.79 81.76 96.64 51.95 130.88 42.9 86.39 1.13 68.63 40.64 46.27 44.63 1.05 78.1 31.73 122.34 21.55 103.51 62.86 126.86 101.79" />
+         </g>
+      </svg>
+   </div>
+</body>
+
+</html>

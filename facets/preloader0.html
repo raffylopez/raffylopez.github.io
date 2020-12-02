@@ -1,0 +1,44 @@
+<!DOCTYPE html> <html>
+
+<head> <meta charset="utf-8" /> <meta name="viewport"
+   content="width=device-width, initial-scale=1"> <title>Preloader0</title>
+   <style type="text/css" media="screen"> * { margin: 0px; padding: 0px; }
+
+      html { font-size: 18px; }
+
+      body { margin: 1rem; padding: 1rem; }
+
+      h1, h2, h3, h4, h5, h6, p, br { margin-bottom: 0.5rem; line-height: 1; }
+
+      nav {}
+
+      .container {}
+
+      .container>h1 {}
+
+      .container>p {}
+
+      footer {}
+
+      #loader-wrapper .loader { background-image: url(./spinner.png);
+         background-repeat: no-repeat; background-size: 100% 100%; height:
+         calc(50vw * 270/806); width: 50vw; z-index: 1001; position: absolute;
+      }
+
+      #loader-wrapper .loader-section { height: 100%; width: 50%; position:
+         fixed; top: 0; background: #222; z-index: 100; } #loader-wrapper
+      .loader-section.section-left { left: 0; } #loader-wrapper
+      .loader-section.section-right { right: 0; } </style> </head>
+
+<body> <nav></nav> <div id="loader-wrapper"> <div class="loader"></div> <div
+         class="loader-section section-left"></div> <div class="loader-section
+         section-right"></div> </div> <section class="container"> <h1>Section
+      Name</h1> <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+   diam nonumy eirmod trempor invidunt ut labore et dolore magna aliquyam erat,
+   sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+   Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+   amet.</p> <p></p> </section class="container"> <footer></footer>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>3-Responsive-Layout-Concepts</title>
+<style type="text/css" media="screen">
+   body {
+      background-color: tomato;
+      color: white;
+      margin: 0px;
+      padding: 0px;
+   }
+
+   .container {
+      height: 50vh;
+      width: 80vh;
+      border: 1px solid black;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+   }
+
+   .box {
+      flex: 1;
+   }
+
+   .red {
+      background-color: red;
+   }
+
+   .blue {
+      background-color: blue;
+   }
+
+   .green {
+      background-color: green;
+   }
+
+   @media screen and (min-width: 576px) {
+      body {
+         background-color: papayawhip;
+         color: black;
+      }
+
+      .container {
+         flex-flow: row;
+      }
+   }
+
+   @media screen and (min-width: 768px) {
+      body {
+         background-color: goldenrod;
+      }
+
+      .container {
+         flex-flow: row;
+      }
+   }
+
+   @media screen and (min-width: 992px) {
+      body {
+         background-color: rebeccapurple;
+         color: white;
+      }
+
+      .container {
+         flex-flow: row;
+      }
+   }
+
+   @media screen and (min-width: 1200px) {
+      body {
+         background-color: green;
+         color: white;
+      }
+   }
+</style>
+</head>
+
+<body>
+   <h2>Responsive Media Queries</h2>
+   <ul>
+      <li>
+         Media queries, breakpoints
+         <ul>
+            <li>0px, 576px, 768px, 992px, 1200px</li>
+         </ul>
+      </li>
+
+      <li>Use calc, as in height: calc(100vw * h / w)</li>
+      <li>Use flexbox</li>
+      <li>Use rem</li>
+      <li>Use css clamp()</li>
+   </ul>
+   <div class="container">
+      <div class="box red"></div>
+      <div class="box blue"></div>
+      <div class="box green"></div>
+   </div>
+   <div class="footer">
+      <br />
+      <a href="./index.html" target="_blank">Back to Index</a>
+   </div>
+</body>

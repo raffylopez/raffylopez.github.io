@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title>Flex0</title>
+   <style type="text/css" media="screen">
+      * {
+         margin: 0px;
+         padding: 0px;
+      }
+
+      .container {
+         display: flex;
+         justify-content: space-between;
+      }
+
+
+      .box {
+         height: 100px;
+         width: 100px;
+         background-color: tomato;
+         border: 1px solid black;
+         flex-grow: 1;
+         flex-shrink: 2;
+      }
+
+      .box-spacer {
+         flex-grow: 2;
+         height: 100px;
+         width: 100px;
+         background-color: blue;
+         border: 1px solid black;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="container">
+      <div class="box"></div>
+      <div class="box box-spacer"></div>
+   </div>
+</body>
+
+</html>

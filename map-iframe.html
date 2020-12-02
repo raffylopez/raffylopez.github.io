@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title>Map-Iframe</title>
+   <style type="text/css" media="screen">
+      * {
+         margin: 0px;
+         padding: 0px;
+      }
+
+      html {
+         font-size: 14px;
+      }
+
+      body {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .search-block {
+         margin: 1rem auto 1rem auto;
+         text-align: center;
+      }
+
+      .map-block {
+         border: 1px solid #888888;
+         text-align: center;
+         margin: 0 auto;
+         background-color: gray;
+      }
+   </style>
+
+   <script charset="utf-8">
+      function onLoad() {
+
+         // Make sure this code gets executed after the DOM is loaded.
+         document.querySelector("#location").addEventListener("keyup", event => {
+            if (event.key !== "Enter") return; // Use `.key` instead.
+            document.querySelector("#btn-findplace").click(); // Things you want to do.
+            event.preventDefault(); // No need to `return false;`.
+         }); 2
+      }
+      function action() {
+         if (window.navigator.geolocation) {
+            const feedToGoogleEmbed = formattedLoc => {
+               var loc = encodeURI(formattedLoc);
+               var source = `https://www.google.com/maps/embed/v1/place?key=AIzaSyCv1wc0j7Prufz41bRT2tXevuGUe86Q5lM&q=${loc}`;
+               document.getElementById("mapframe").src = source;
+            }
+            const successfulLookup = position => {
+               const {
+                  latitude,
+                  longitude
+               } = position.coords;
+               fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=6cc86d20a95c49ff99617529a7d5b06f`)
+                  // .then(response => response.json())
+                  // .then(console.log)
+                  .then(response => response.json())
+                  .then(json => json["results"][0]["formatted"])
+                  .then(feedToGoogleEmbed);
+            }
+            window.navigator.geolocation.getCurrentPosition(successfulLookup, console.log)
+         }
+      }
+
+      function findPlace() {
+         const place = document.getElementById("location").value;
+         const findPlace = place === "" || place == null ? "Space Needle" : place;
+         document.getElementById("location").value = findPlace;
+         var loc = encodeURI(findPlace);
+         var source = `https://www.google.com/maps/embed/v1/place?key=AIzaSyCv1wc0j7Prufz41bRT2tXevuGUe86Q5lM&q=${loc}`;
+         document.getElementById("mapframe").src = source;
+      }
+   </script>
+</head>
+
+<body onload="onLoad()">
+   <div class="search-block">
+      <input type="text" id="location" />
+      <button id="btn-findplace" onClick="findPlace()">Find</button>
+      <button id="btn-getcurrentloc" onClick="action()">Get Current Location</button>
+   </div>
+   <div class="map-block">
+      <iframe id="mapframe" width="600" height="450" frameborder="0" style="border: 0" src="" allowfullscreen>
+   </div>
+   </iframe>
+</body>
+
+</html>

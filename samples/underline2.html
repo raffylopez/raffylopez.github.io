@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <title>Index0</title>
+   <!-- <link rel="stylesheet" href="index.css" type="text/css" media="all"> -->
+   <style type="text/css" media="screen">
+      @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+      * {
+         margin: 0px;
+         padding: 0px;
+         font-size: 1rem;
+      }
+
+      .debug {
+         border: 1px solid red;
+      }
+
+      .navbar-container {
+         font-family: "Inter";
+         background-color: #111111;
+         z-index: -1;
+         display: flex;
+         justify-content: space-between;
+         width: 100vw;
+         position: relative;
+         z-index: 0;
+         box-shadow: 0px 10px 12px black;
+      }
+
+      .item {
+         display: flex;
+         padding: 10px;
+         align-items: center;
+         position: relative;
+      }
+
+      .logo-container .item {
+         font-family: "Raleway";
+         font-weight: 900;
+         font-size: 1.4rem;
+         display: flex;
+         padding: 10px;
+         align-items: center;
+         color: #EEEEEE;
+      }
+
+      .links-container {
+         display: flex;
+      }
+
+      .hot {
+         background-color: red;
+         color: white;
+         border-radius: 4px;
+         padding-left: 4px;
+         padding-right: 4px;
+         padding-top: 2px;
+         font-size: 0.8rem;
+         font-weight: bold;
+         padding-bottom: 2px;
+         border: 1px solid red;
+      }
+
+      .hot:hover {
+         background-color: white;
+         border: 1px solid red;
+         color: red;
+      }
+
+      .item a {
+         text-decoration: none;
+      }
+
+      .links-container .item a {
+         color: #BBBBBB;
+         transition: 0.3s;
+         position: relative;
+      }
+
+      .links-container .item a:hover {
+         color: white;
+      }
+
+      .item a:after {
+         height: 2px;
+         content: "";
+         background-color: white;
+         display: block;
+         position: relative;
+         width: 0;
+         left: 50%;
+         bottom: 0;
+         transition: width 300ms ease 0s, left 300ms ease 0s;
+      }
+       .item a:hover:after {
+         color: white;
+         left: 0;
+         width: 100%;
+      }
+
+      .autosizing-with-bg-image {
+         width: 100%;
+         height: calc((100vw * 10) / 16);
+         background-image: url(./img/leaf-stairs.jpg);
+         background-repeat: no-repeat;
+         background-size: 100% 100%;
+         box-shadow: 15px 15px 10px darkgray;
+      }
+   </style>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+   <div class="navbar-container">
+      <div class="logo-container">
+         <div class="logo">
+            <span style="color: white;font-size: 1.7rem;font-weight:bolder">Acme</span><span style="font-size:1.7rem;font-weight:bolder;color:red">Corporation</span>
+         </div>
+      </div>
+      <div class="links-container">
+         <div class="item my-item">
+            <a href="">Products</a>
+         </div>
+         <div class="item my-item">
+            <a href="">Home</a>
+         </div>
+         <div class="item my-item">
+            <a href="">About</a>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html

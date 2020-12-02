@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style type="text/css" media="screen">
+   :root {
+      font-size: 16px;
+   }
+
+   @keyframes body-animate {
+      0% {
+
+      }
+      100%{
+         background-color: white;
+         color: black;
+      }
+   }
+   body {
+      animation-name: body-animate;
+      animation-fill-mode: forwards;;
+      animation-duration: 1s;
+      animation-delay: 2s;
+      background-color: black;
+      color: #eee;
+   }
+   .logo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7vw;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: 0 0;
+      animation-name: animate;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;;
+      animation-delay: 2s;
+   }
+   @keyframes animate {
+      0% {
+      }
+      100%{
+         top: 1rem;
+         left:3.5rem;
+         transform-origin: 0 0;
+         transform: translate(0%, 0%);
+         font-size: 4vw;
+         color: #333;
+         transform: rotate(90deg);
+      }
+   }
+      
+   </style>
+</head>
+
+<body>
+<div class="container">
+   <div class="logo">Eureka! Designs</div>
+</div>
+</body>
+</html>

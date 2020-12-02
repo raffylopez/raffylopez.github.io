@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9Anime-Like0</title>
+
+    <script src="jquery-ui/external/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="./jquery-ui/jquery-ui.min.css">
+    <style type="text/css" media="screen">
+        #ui-id-1 {
+            border-style: none;
+            background-color: #222;
+        }
+
+        .autocomplete-item {
+            color: white;
+            position: absolute;
+        }
+
+        .autocomplete-item .thumbnail {
+            border: 1px dotted green;
+            background-color: #555;
+            display: block;
+            height: 48px;
+            width: 32px;
+            position: absolute;
+        }
+
+        .autocomplete-item .item-label {
+            /* border: 1px solid white; */
+            display: block;
+            margin-left: 78px !important;
+            padding: 0px !important;
+            height: 74px;
+        }
+
+        .autocomplete-item .item-label p {
+            /* border: 1px solid white; */
+            padding: 0px !important;
+        }
+
+        .autocomplete-item autocomplete-line {
+            display: block;
+        }
+
+        .ui-menu .ui-menu-item a {
+            border-radius: 0.5rem;
+        }
+
+        .ui-menu {
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        .ui-menu-item {}
+
+
+        .ui-menu-item * {
+            /* font-family: Arial, Helvetica, sans-serif; */
+            padding: 1rem !important;
+            width: inherit;
+            display: block;
+            clear: both;
+            font-weight: normal;
+            line-height: 18px;
+            color: #CCC;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .ui-menu-item>a.ui-corner-all {}
+
+        .ui-state-hover,
+        .ui-state-active {
+            color: #ffffff;
+            text-decoration: none;
+            background-color: #0088cc;
+            border-radius: 0.5rem;
+            -webkit-border-radius: 0.5rem;
+            -moz-border-radius: 0.5rem;
+            background-image: none;
+        }
+
+        .ui-autocomplete li.ui-menu-item {
+            /* width: 350px; */
+        }
+
+
+        #project-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+
+        #project-icon {
+            float: left;
+            height: 32px;
+            width: 32px;
+        }
+
+        #project-description {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="./jquery-ui/jquery-ui.min.js"></script>
+    <script charset="utf-8">
+        jQuery.ui.autocomplete.prototype._resizeMenu = function() {
+            var ul = this.menu.element;
+            ul.outerWidth(this.element.outerWidth());
+            ul.css("margin-top", "20px");
+            // ul.innerWidth(100)
+        }
+        $(function() {
+            var projects = [{
+                    value: "toy-story-01",
+                    label: "Toy Story",
+                    desc: "Pixar, 3D Animation",
+                    icon: "jquery_32x32.png"
+                },
+                {
+                    value: "got-01",
+                    label: "Day of the Jackal",
+                    desc: "Action Thriller",
+                    icon: "jqueryui_32x32.png"
+                },
+                {
+                    value: "",
+                    label: "Against All Odds",
+                    desc: "Romance",
+                    icon: "sizzlejs_32x32.png"
+                }
+            ];
+
+            $("#searchInput").autocomplete({
+                    minLength: 0,
+                    source: projects,
+                    focus: function(event, ui) {
+                        $("#project").val(ui.item.label);
+                        return false;
+                    },
+                    select: function(event, ui) {
+                        $("#project").val(ui.item.label);
+                        $("#project-id").val(ui.item.value);
+                        $("#project-description").html(ui.item.desc);
+                        $("#project-icon").attr("src", "images/" + ui.item.icon);
+
+                        return false;
+                    },
+                    _resizeMenu: function() {
+                        // this.menu.element.outerWidth(500);
+                    },
+                    open: function() {
+                        // $("ul.ui-menu").width($(this).innerWidth());
+                        $("ul.ui-menu").css("margin-top", "30px");
+
+                    },
+                    select: function(event, ui) {
+                        $("#searchInput").val(ui.item.label);
+                        return false;
+                    }
+                })
+                .autocomplete("instance")._renderItem = function(ul, item) {
+                    return $("<li>")
+                        .append("<div class='autocomplete-item'><div class='thumbnail' />" + "<div class='item-label'><p class='autocomplete-line'>" + item.label + "</p><p class='autocomplete-line'>" + item.desc + "</p></div></div>")
+                        .appendTo(ul);
+                };
+        });
+        window.onresize = () => {
+            $("#searchInput").autocomplete("close");
+        };
+    </script>
+</head>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Poppins";
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+    }
+
+    nav {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    nav .logo {
+        display: flex;
+        /* border: 1px solid white; */
+        background-image: url("./img/videorama.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 20rem;
+        /* height: 3rem; */
+        background-position: -20px 0px;
+        height: calc((100vw * 550) / 2789 * 0.25);
+        min-height: 2.3rem;
+        max-height: 3rem;
+    }
+
+    .btn-login {
+        white-space: nowrap;
+        display: flex;
+        background-color: #f15a29;
+        color: white;
+        font-size: 1rem;
+        font-weight: 800;
+        border: 1px solid #f15a29;
+        border-radius: 2rem;
+        padding: 1rem 2.7rem 1rem 2.7rem;
+    }
+
+    .hero .logo {
+        display: flex;
+        /* border: 1px solid white; */
+        background-image: url("./img/videorama.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 20rem;
+        height: 4rem;
+        margin: 0 auto;
+        margin-top: 7rem;
+        /* height: calc((100vw * 550) / 2789 * 0.25); */
+    }
+
+    .search-panel {
+        margin: 3rem auto 0rem auto;
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        min-width: 0px;
+        max-width: 250px;
+        font-family: "Poppins";
+    }
+
+    .search-panel input {
+        font-family: inherit;
+        margin: 0 auto;
+        color: #cccccc;
+        padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+        border-radius: 1rem 0rem 0rem 1rem;
+        border-style: none;
+        background-color: #222222;
+        width: 70vw;
+        min-width: 40vw;
+        font-size: 1.2rem;
+    }
+
+    button:focus,
+    input:focus {
+        outline-width: 0;
+        outline: none;
+    }
+
+    .search-panel .btn-search {
+        font-family: inherit;
+        background-color: #f15a29;
+        color: white;
+        border: 1px solid #f15a29;
+        border-radius: 0rem 0.6rem 0.6rem 0rem;
+        padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+        border-style: none;
+        font-size: 1.2rem;
+        text-indent: -9999px;
+        background-image: url("./img/magnifier.svg");
+        background-repeat: no-repeat;
+        background-position: 1.2em 1em;
+        background-size: 40% 40%;
+    }
+
+    .tagline {
+        margin: 1rem auto;
+        color: #cccccc;
+        font-family: "Poppins";
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .orange-text {
+        color: #f15a29;
+    }
+
+    .hero {
+        /* min-height: 400px; */
+        /* border: 1px solid white; */
+        /* margin-bottom: 100px; */
+        flex: 1 0 auto;
+    }
+
+    .spacing {
+        height: 50px;
+    }
+
+    .footer {
+        flex-shrink: 0;
+        font-family: "Poppins";
+        /* IMPORTANT - Push footer downwards. Makes footer look less like a cookie
+             * permission dialog. Value should be a vh that indicates size of exposed
+             * section.
+            */
+        height: 20vh;
+    }
+
+    .footer-adjuster {
+        padding: 20px 40px 20px 40px;
+        background-color: #222222;
+        width: auto;
+        height: 200px;
+        color: #cccccc;
+    }
+
+    /* .footer { */
+    /*   flex: 0 0 50px; */
+    /*   margin-top: auto; */
+    /*   font-family: "Poppins"; */
+    /*   background-color: #222222; */
+    /*   width: 100vw; */
+    /*   height: 100px; */
+    /*   bottom: 0; */
+    /*   display: block; */
+    /*   /* box-sizing: border-box; */
+    */
+    /*   /* display: block; */
+    */
+    /*   color: #cccccc; */
+    /*   padding: 20px; */
+    /* } */
+</style>
+
+<body>
+    <nav>
+        <div class="logo"></div>
+        <div class="sign-in-container">
+            <button class="btn-login">Sign in</button>
+        </div>
+    </nav>
+    <div class="hero">
+        <div class="logo"></div>
+        <div class="search-panel">
+            <input id="searchInput" type="text" placeholder="Search for a movie or episode" />
+            <button class="btn-search">Find</button>
+        </div>
+
+        <div class="tagline">
+            Videorama - Tons of videos at your fingertips!
+        </div>
+        <div class="tagline orange-text">
+            ★&nbsp;Connect with us on twitter
+        </div>
+        <div class="spacing"></div>
+    </div>
+    <div class="footer">
+        <div class="footer-adjuster">
+            <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
